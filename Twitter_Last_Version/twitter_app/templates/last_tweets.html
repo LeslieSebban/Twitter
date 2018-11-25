@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+<title>Last Tweets</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/tweets_style.css' %}">
+</head>
+<body>
+<h1>Latest Tweets</h1>
+	{% for tweets in tweet %}
+	<a href="/first_app/user_profile/{{tweets.user.id}}" >
+		<p>{{tweets.user}}</p>
+	</a>
+		<p>{{tweets.text}} </p>
+	{%endfor%}
+</body>
+</html>

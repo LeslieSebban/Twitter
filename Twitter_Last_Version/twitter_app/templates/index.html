@@ -1,0 +1,20 @@
+{% extends "base.html"%}
+{% block header_title"%} Timeline {% endblock%}
+{% block content %}
+
+{% for tseet in tweets%}
+
+<div class="card">
+	<div class =" card-body">
+		<p class = "card-text"> {{tweet.text}} </p>
+		<a href ="{% url 'twitter_app:profile
+		user_id = tweet.user.id %}" class = "card-link"> {{tweet.user.username}}</a>
+		<span> class = "card-link" {{tweet.date}}</span>
+	</div>
+</div>
+
+{%endfor%}
+{% endblock %}
+
+
+

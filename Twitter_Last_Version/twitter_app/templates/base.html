@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/tweets_style.css' %}">
+  <title></title>
+</head>
+<body>
+
+  <div class ="container">
+    <nav>
+       <a href="{% url 'main_app:profile' user_id=tweet.user.id %}">Tweeter
+        </a>
+
+      </nav>
+      <div id = "content">
+        {% blockcontent %}{% endcontent%}
+  
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+{% extends "base.html"%}
+{%block header_title%} Profile {%endblock%}
+{%block content %}
+
+<h1> {{user.username}}</h1>
+{% for tweet in tweets %}
+
+
